@@ -1,15 +1,16 @@
 package com.group.taskservice.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.List;
-
 
 @Entity
+@SuperBuilder
 @Data
+@RequiredArgsConstructor
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,8 +19,4 @@ public class Employee {
     private String lastName;
     private Timestamp registeredAt;
     private Timestamp lastLogin;
-
-    @Transient
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    private List<Task> tasks;
 }
