@@ -1,2 +1,2 @@
 # employee-tasks-service
-Spring service for application to manage employees work 
+Spring service for application to manage employees work - work in progress...
